@@ -1,0 +1,11 @@
+[package]
+name = "noughts-and-crosses-core"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+getrandom = { workspace = true }
+rand = { workspace = true }
+serde = { workspace = true }
+thiserror = { workspace = true }

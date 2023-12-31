@@ -1,0 +1,19 @@
+name = "noughts-and-crosses"
+compatibility_date = "2023-03-22"
+main = "server/build/worker/shim.mjs"
+
+[durable_objects]
+bindings = [
+  { name = "GAME", class_name = "Game" }
+]
+
+[[migrations]]
+tag = "v1"
+new_classes = ["Game"]
+
+[vars]
+WORKERS_RS_VERSION = "0.0.9"
+
+[build]
+cwd = "server"
+command = "cargo install worker-build && worker-build --release"

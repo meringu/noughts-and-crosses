@@ -1,0 +1,9 @@
+[build]
+target = "client/index.html"
+dist = "dist"
+
+[watch]
+watch = ["client", "core"]
+
+[serve]
+address = "0.0.0.0"

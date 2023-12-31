@@ -1,0 +1,35 @@
+[workspace]
+members = ["client", "core", "server"]
+resolver = "2"
+
+[workspace.dependencies]
+bevy = { version = "0.12.1", default-features = false, features = [
+  "bevy_pbr",
+  "bevy_render",
+  "bevy_ui",
+  "x11",
+  "tonemapping_luts",
+  "default_font",
+  "webgl2",
+]}
+bincode = "1"
+futures-util = "0.3.30"
+getrandom = {version = "0.2.11", features = ["js"] }
+js-sys = "0.3.66"
+rand = "0.8.5"
+serde = { version = "1", features = ["derive"] }
+thiserror = "1.0"
+tokio = { version = "1", features = ["sync"] }
+wasm-bindgen = "0.2.89"
+wasm-bindgen-futures = "0.4.39"
+web-sys = { version = "0.3.66", features = ["BinaryType", "ErrorEvent", "History", "Location", "MessageEvent", "WebSocket", "Window"] }
+worker = { git = "https://github.com/fornwall/workers-rs", branch = "wasm-bindgen-0.2.88" }
+
+[profile.release]
+opt-level = "s"
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3

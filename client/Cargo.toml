@@ -1,0 +1,15 @@
+[package]
+name = "noughts-and-crosses-client"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+noughts-and-crosses-core = { path = "../core" }
+
+bevy = { workspace = true }
+bincode = { workspace = true }
+tokio = { workspace = true }
+wasm-bindgen = { workspace = true }
+wasm-bindgen-futures = { workspace = true }
+web-sys = { workspace = true }
